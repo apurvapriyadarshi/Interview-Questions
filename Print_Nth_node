@@ -1,0 +1,55 @@
+package testing;
+import java.util.*;
+
+import testing.LinkedList.Node;
+ public class LinkL {
+
+	static Node head;
+	  static class Node{
+		int data;
+		Node next;
+		Node(int d)
+		{
+			data=d;
+			next=null;
+		}
+	}
+	 
+	  public static void nthnode(int n)
+	  {
+		  Node mainptr=head;
+		  Node secptr=head;
+		  for(int i=1;i<=n;i++)
+		  {
+			  secptr=secptr.next;
+		  }
+		  while( secptr != null)
+		  {
+			  mainptr= mainptr.next;
+			  secptr= secptr.next;
+			  
+		  }
+		  System.out.println("Nth node from last is "+mainptr.data);
+		  
+	  }
+	  
+	 public static void main(String args[])
+	 {
+		 LinkL llist= new LinkL();
+		 llist.head=new Node(1);
+		 Node second=new Node(2);
+		  Node third=new Node(3);
+		  Node fourth=new Node(4);
+		  Node fifth=new Node(5);
+		  Node six=new Node(6);
+		  Node seven=new Node(7);
+		  llist.head.next=second;
+		  second.next=third;
+		  third.next=fourth;
+		  fourth.next=fifth;
+		  fifth.next=six;
+		  six.next=seven;
+		  seven.next=null;
+		  llist.nthnode(2);
+	 }
+}
